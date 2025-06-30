@@ -1,8 +1,0 @@
-# Règle pour que /contact affiche contact.html
-/contact    /contact.html    200
-
-# Règle pour que /services affiche services.html
-/services   /services.html   200
-
-# Règle pour que /a-propos affiche a-propos.html
-/a-propos   /a-propos.html   200
