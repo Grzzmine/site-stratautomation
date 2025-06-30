@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contactez-nous - Strat’Automation</title>
+  <meta name="description" content="Contactez Strat’Automation pour un audit gratuit ou pour toute question sur nos services d'automatisation et de développement.">
+  <meta name="author" content="Strat’Automation">
+  <meta name="robots" content="index, follow">
+  <!-- Le seul lien CSS nécessaire -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ======================================================= -->
+  <!-- 1. MENU MOBILE (OVERLAY) - Enfant direct du body -->
+  <!-- ======================================================= -->
+  <nav class="nav-menu" id="mobile-menu">
+    <button class="close-menu" aria-label="Fermer le menu">×</button>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ======================================================= -->
+<!-- 2. HEADER - Contient le logo et le menu DESKTOP -->
+<!-- ======================================================= -->
+<header>
+    <div class="container">
+        <!-- Logo + Nom de la société -->
+        <a href="index.html" class="logo-container">
+            <img src="/assets/img/2.png" alt="Logo Strat'Automation" class="logo">
+            <span class="logo-text">Strat'Automation</span>
+        </a>
+
+        <!-- Le bouton pour ouvrir le menu mobile -->
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+          <span class="hamburger"></span>
+        </button>
+        
+        <!-- Le menu pour le bureau (Desktop) -->
+        <nav class="desktop-nav">
+            <ul>
+                <!-- La classe "active" est sur le bon lien pour la page d'accueil -->
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+  <!-- La div "site-content" pour le footer "sticky" -->
+  <div class="site-content">
+      <main>
+          <section class="contact-page">
+              <div class="container">
+                  <h2>Parlons de votre projet</h2>
+                  <p class="section-intro">Remplissez le formulaire ci-dessous pour nous décrire votre besoin. Nous vous recontacterons sous 24 heures pour planifier un premier échange gratuit.</p>
+                  
+                  <!-- contact.html -->
+
+<!-- On ajoute l'attribut "data-netlify='true'" ET un champ caché -->
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    
+                    <!-- Ce champ caché est obligatoire pour que Netlify identifie le formulaire -->
+                    <input type="hidden" name="form-name" value="contact" />
+                    
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="cta">Envoyer le message</button>
+                </form>
+              </div>
+          </section>
+      </main>
+  </div>
+
+  <footer>
+    <div class="container footer-content">
+        <p class="copyright">© 2025 Strat'Automation – Automatisation & Digital sur-mesure</p>
+        
+        <div class="social-links">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/thierry-filon-53a328372/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v7h-4v-7a6 6 0 0 1 6 -6z"></path>
+                    <path d="M2 9h4v12h-4z"></path>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/Grzzmine" target="_blank" rel="noopener noreferrer" aria-label="Mes projets sur GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                    <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .5 -.6 1.2 -.5 2v3.5"></path>
+                </svg>
+            </a>
+            <!-- NOUVEAU : Instagram -->
+            <a href="https://www.instagram.com/stratautomation/" target="_blank" rel="noopener noreferrer" aria-label="Suivez-nous sur Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Le lien vers le script JS, correctement placé -->
+  <script src="/assets/js/script.js"></script>
+
+</body>
+</html>

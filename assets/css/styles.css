@@ -1,0 +1,187 @@
+/* /assets/css/styles.css - VERSION FINALE AVEC STYLES DES NOUVELLES SECTIONS */
+
+/* ======================================================= */
+/*               FONDATIONS & NOUVELLE PALETTE             */
+/* ======================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-dark: #293241;
+    --bg-light: #FFFFFF;
+    --bg-nav: #f1f3f5;
+    --bg-nav-hover: #e9ecef;
+    --bg-trust-block: #3E5C76; /* NOUVELLE couleur, un bleu-gris élégant */
+    --text-dark: #212529;
+    --text-light: #e9ecef;
+    --cta-bg: #49586e;
+    --divider-color: #fce4ec;
+
+    --header-height: 90px;
+    --border-radius-pill: 50px;
+    --border-radius-card: 8px;
+    --transition: all 0.3s ease;
+    --shadow-strong: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* ======================================================= */
+/*      LAYOUT (Footer "sticky" & Scroll Lock - OK)        */
+/* ======================================================= */
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--bg-light); -webkit-font-smoothing: antialiased; }
+.site-content { flex: 1 0 auto; }
+body.menu-open { overflow: hidden; }
+.nav-menu { overflow-y: auto; overscroll-behavior: contain; }
+
+/* ... (Les styles du Header, Nav, Menu Mobile restent inchangés et sont corrects) ... */
+header { background: var(--bg-light); border-bottom: 1px solid var(--divider-color); position: sticky; top: 0; z-index: 1000; height: var(--header-height); }
+header .container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.logo-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+.logo { height: 45px; }
+.logo-text { font-size: 1.5rem; font-weight: 600; color: var(--text-dark); }
+.logo-container:hover .logo { transform: scale(1.05); }
+.nav-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--bg-dark); z-index: 9999; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transform: scale(1.05); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; }
+.nav-menu.is-active { opacity: 1; visibility: visible; transform: scale(1); }
+.nav-menu ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; text-align: center; }
+.nav-menu li { opacity: 0; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease; }
+.nav-menu.is-active li { opacity: 1; transform: translateY(0); transition-delay: calc(0.1s * var(--i, 1)); }
+.nav-menu.is-active li:nth-child(2) { --i: 2; }
+.nav-menu.is-active li:nth-child(3) { --i: 3; }
+.nav-menu.is-active li:nth-child(4) { --i: 4; }
+.nav-menu a { display: inline-block; padding: 0.75rem 1.5rem; font-size: 1.8rem; font-weight: 500; color: var(--text-light); text-decoration: none; transition: var(--transition); }
+.nav-menu a:hover { color: white; transform: scale(1.1); }
+.close-menu { position: absolute; top: 25px; right: 5%; background: none; border: none; color: white; font-size: 2.5rem; font-weight: 300; cursor: pointer; line-height: 1; padding: 10px; z-index: 10000; transition: transform 0.3s ease; }
+.close-menu:hover { transform: rotate(90deg); }
+.menu-toggle { display: block; }
+.desktop-nav { display: none; }
+.hamburger { display: block; width: 25px; height: 3px; background-color: var(--text-dark); position: relative; transition: all 0.3s ease-in-out; }
+.hamburger::before, .hamburger::after { content: ''; position: absolute; width: 100%; height: 3px; background-color: var(--text-dark); left: 0; transition: all 0.3s ease-in-out; }
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+/* ======================================================= */
+/*               CONTENU PRINCIPAL COMPLET                 */
+/* ======================================================= */
+.container { width: 90%; max-width: 1140px; margin: 0 auto; }
+h1, h2, h3 { font-weight: 600; color: var(--text-dark); }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.2; }
+h2 { font-size: clamp(2rem, 4vw, 2.5rem); text-align: center; margin-bottom: 4rem; }
+p.section-intro { max-width: 700px; margin: 0 auto 50px; text-align: center; color: #6c757d; }
+main section { padding: 5rem 0; }
+.hero { padding: 6rem 0; text-align: center; background-color: var(--bg-dark); color: var(--text-light); }
+.hero h1 { color: var(--bg-light); }
+.hero p { max-width: 650px; margin: 1.5rem auto 2.5rem auto; color: rgba(255,255,255,0.8); }
+.cta { display: inline-block; background: var(--cta-bg); color: var(--text-light); padding: 0.9rem 2.2rem; border-radius: var(--border-radius-pill); font-weight: 500; text-decoration: none; border: none; cursor: pointer; transition: var(--transition); }
+.cta:hover { background-color: #5c6c84; transform: translateY(-2px); }
+
+/* --- NOUVEAU : Styles pour les nouvelles sections --- */
+.benefits-section, .services-preview-section { background-color: var(--bg-light); }
+.trust-block {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    text-align: center;
+}
+.trust-block h2 {
+    color: var(--bg-light);
+}
+.trust-block p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+.cta.cta-light { /* Style spécial pour le bouton sur fond sombre */
+    background-color: var(--bg-light);
+    color: var(--bg-dark);
+}
+.cta.cta-light:hover {
+    background-color: var(--bg-nav-hover);
+}
+.section-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+/* -- Styles pour les cartes de service (réutilisés) -- */
+.service-list { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.service { background: var(--bg-light); padding: 2.5rem; border-radius: var(--border-radius-card); box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: var(--transition); }
+.service:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.service h3 { font-size: 1.2rem; margin-top: 0; margin-bottom: 0.5rem; }
+.service p { color: #6c757d; font-size: 0.95rem; margin-bottom: 0; }
+
+/* ... (Style du formulaire inchangé) ... */
+.contact-form { max-width: 700px; margin: 40px auto 0; background-color: var(--bg-light); padding: 2.5rem; border-radius: var(--border-radius-card); box-shadow: var(--shadow-strong); border: 1px solid #e9ecef; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #495057; }
+.form-group input, .form-group textarea { width: 100%; padding: 1rem; border: 1px solid #ced4da; border-radius: 8px; font-size: 1rem; font-family: 'Poppins', sans-serif; transition: var(--transition); background-color: var(--bg-nav); box-sizing: border-box; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--cta-bg); background-color: white; box-shadow: 0 0 0 3px rgba(73, 88, 110, 0.2); }
+.contact-form .cta { width: 100%; padding: 1.2rem; }
+footer { background: var(--bg-dark); color: #adb5bd; padding: 2rem 0; }
+footer .container { display: flex; justify-content: center; align-items: center; text-align: center; }
+
+/* ======================================================= */
+/*          RESPONSIVE - VUE DESKTOP (COMPLET)             */
+/* ======================================================= */
+@media (min-width: 1024px) {
+    header .container { justify-content: center; gap: 4rem; }
+    .desktop-nav { display: block; }
+    .desktop-nav ul { list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 0.5rem; }
+    .desktop-nav a { display: block; padding: 0.6rem 1.2rem; border-radius: var(--border-radius-card); font-size: 0.95rem; font-weight: 500; color: var(--text-dark); background-color: var(--bg-nav); text-decoration: none; transition: var(--transition); }
+    .desktop-nav a:hover { background-color: var(--bg-nav-hover); }
+    .desktop-nav a.active { font-weight: 600; }
+    .menu-toggle, .nav-menu { display: none; }
+    .logo-text { display: block; }
+
+    /* NOUVEAU : Grilles pour les nouvelles sections sur desktop */
+    .benefits-section .service-list { grid-template-columns: repeat(4, 1fr); }
+    .services-preview-section .service-list.three-items { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .service-list { grid-template-columns: repeat(2, 1fr); }
+}
+/* /assets/css/styles.css - AJOUT POUR LE FOOTER AVEC ICÔNES */
+
+/* ======================================================= */
+/*                 STYLE DU FOOTER AMÉLIORÉ                */
+/* ======================================================= */
+
+footer {
+    background: var(--bg-dark);
+    color: #adb5bd;
+    padding: 2.5rem 0; /* Un peu plus d'espace */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Sur mobile : empiler */
+    align-items: center;
+    gap: 1.5rem; /* Espace entre le texte et les icônes */
+}
+
+.copyright {
+    margin: 0;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.25rem; /* Espace entre les icônes */
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    color: #adb5bd; /* Couleur de base de l'icône */
+    transition: var(--transition);
+}
+
+.social-links a:hover .social-icon {
+    color: var(--bg-light); /* L'icône devient blanche au survol */
+    transform: translateY(-3px);
+}
+
+/* --- Styles pour la vue bureau --- */
+@media (min-width: 1024px) {
+    .footer-content {
+        flex-direction: row; /* Sur bureau : côte à côte */
+        justify-content: space-between; /* Pousse les éléments aux extrémités */
+    }
+}
